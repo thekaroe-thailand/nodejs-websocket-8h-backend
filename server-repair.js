@@ -46,7 +46,7 @@ app.put('/tickets/:id/status', (req, res) => {
     const { status } = req.body;
     ticket.status = status || ticket.status;
 
-    broadcast({ type: 'update_ticket', ticket });
+    broadcast({ type: 'update_status', ticket });
     res.json(ticket);
 })
 
